@@ -12,7 +12,7 @@ public class ML implements KeyboardHandler {
     private Picture bishi;
 
     public ML () {
-        bishi = new Picture(0, 20, "rsc/lancer.png");
+        bishi = new Picture(0, 350, "rsc/lancer.png");
         bishi.draw();
         initKeyboard();
     }
