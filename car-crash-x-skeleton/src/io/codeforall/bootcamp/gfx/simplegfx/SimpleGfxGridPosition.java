@@ -23,14 +23,10 @@ public class SimpleGfxGridPosition extends AbstractGridPosition {
      */
     public SimpleGfxGridPosition(SimpleGfxGrid grid) {
         super((int) (Math.random() * grid.getCols()), (int) (Math.random() * grid.getRows()), grid);
-        this.rectangle = new Rectangle(grid.columnToX(this.getCol()),
-                grid.rowToY(this.getRow()),
-                grid.getCellSize(),
-                grid.getCellSize());
+        this.rectangle = new Rectangle(grid.columnToX(this.getCol()), grid.rowToY(this.getRow()), grid.getCellSize(), grid.getCellSize());
 
-        this.setColor(GridColor.BLUE);
         this.rectangle.fill();
-        this.rectangle.draw();
+
         this.simpleGfxGrid = grid;
     }
 
