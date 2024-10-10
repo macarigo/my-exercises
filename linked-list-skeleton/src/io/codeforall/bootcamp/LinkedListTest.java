@@ -212,6 +212,7 @@ public class LinkedListTest {
 
         // Test removal with empty list
         if (list.remove(data1)) {
+            System.out.println("1");
             return false;
         }
         ;
@@ -220,14 +221,17 @@ public class LinkedListTest {
         list.add(data1);
 
         if (list.remove(data2)) {
+            System.out.println("2");
             return false;
         }
 
         if (!list.remove(data1)) {
+            System.out.println("3");
             return false;
         }
 
         if (list.size() != 0) {
+            System.out.println("4");
             return false;
         }
 
@@ -236,27 +240,33 @@ public class LinkedListTest {
         list.add(data2);
 
         if (list.remove(data3)) {
+            System.out.println("5");
             return false;
         }
 
         if (!list.remove(data1)) {
+            System.out.println("6");
             return false;
         }
 
         if (list.size() != 1) {
+            System.out.println("7");
             return false;
         }
 
         list.add(data1);
         if (!list.remove(data1)) {
+            System.out.println("9");
             return false;
         }
 
         if (!list.remove(data2)) {
+            System.out.println("9");
             return false;
         }
 
         if (list.size() != 0) {
+            System.out.println("10");
             return false;
         }
 
@@ -266,30 +276,37 @@ public class LinkedListTest {
         list.add(data3);
 
         if (list.remove(data4)) {
+            System.out.println("11");
             return false;
         }
 
         if (!list.remove(data2)) {
+            System.out.println("12");
             return false;
         }
 
         if (list.size() != 2) {
+            System.out.println("13");
             return false;
         }
 
         if (list.indexOf(data1) != 0) {
+            System.out.println("14");
             return false;
         }
 
         if (list.indexOf(data3) != 1) {
+            System.out.println("15");
             return false;
         }
 
         if (!list.remove(data3)) {
+            System.out.println("16");
             return false;
         }
 
         if (list.size() != 1) {
+            System.out.println("17");
             return false;
         }
 
