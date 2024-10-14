@@ -6,21 +6,21 @@ import java.util.function.Consumer;
 
 // Range iterator class to implement Iterator, create range iterator constructor,
 // plus override super class methos hasNext, next and remove.
-public class RangeIterator implements Iterator<Integer> {
+public class RangeIterator implements Iterator<T> {
 
     int initial;
     int last;
-    private Node<Integer> head;
-    private Node<Integer> currentNode;
+    private Node<T> head;
+    private Node<T> currentNode;
 
-    // Constructor method to populate new nodes with data and next pointer
+// Constructor method to populate new nodes with data and next pointer
     public RangeIterator(int initial, int last) {
 
         this.initial = initial;
         this.last = last;
 
-        this.head = new Node<>(null, null);
-        this.head.setNext(new Node<>(null, null));
+        this.head = new Node<Integer>(null, null);
+        this.head.setNext(new Node<Integer>(null, null));
         Node<Integer> node = this.head.getNext();
 
         for (int i = initial; i < last + 1; i++) {
@@ -35,8 +35,7 @@ public class RangeIterator implements Iterator<Integer> {
         System.out.println(currentNode.getNext().getData());
 
     }
-
-    // Boolean method to check if current node has a next pointer
+// Boolean method to check if current node has a next pointer
     @Override
     public boolean hasNext() {
         if (currentNode.getNext().getData() == null) {
@@ -45,8 +44,7 @@ public class RangeIterator implements Iterator<Integer> {
         }
         return true;
     }
-
-    // Method to return the data in the current node
+// Method to return the data in the current node
     @Override
     public Integer next() {
         this.currentNode = currentNode.getNext();
@@ -54,15 +52,18 @@ public class RangeIterator implements Iterator<Integer> {
         return result;
 
     }
-
-    // Method to remove nodes from our list, i.e. changing the reference from the previous node
+// Method to remove nodes from our list, i.e. changing the reference from the previous node
     @Override
     public void remove() {
-        Node<Integer> previousNode = this.getPreviousNode(this.currentNode);
-        previousNode.setNext(this.currentNode.getNext());
-    }
 
-    // Method to return the previous node, to use in the remove method
+
+        Node<Integer> previousNode = getPreviousNode(this.currentNode);
+
+
+        previousNode.setNext(this.currentNode.getNext());
+
+    }
+// Method to return the previous node, to use in the remove method
     public Node<Integer> getPreviousNode(Node<Integer> target) {
 
         Node<Integer> node = head.getNext();

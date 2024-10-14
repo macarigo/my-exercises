@@ -4,16 +4,17 @@ import java.util.Iterator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
-public class RangeTest implements Iterable<Integer> {
+public class RangeTest implements Iterable<T> {
 
-    private Iterator<Integer> iterator;
+    private Iterator<T> iterator;
 
     public RangeTest(int initial, int last) {
-        iterator = new RangeIterator(initial, last);
-    }
 
+        iterator = new RangeIterator(initial, last);
+
+    }
     @Override
-    public Iterator<Integer> iterator() {
+    public Iterator<T> iterator() {
 
         return this.iterator;
     }

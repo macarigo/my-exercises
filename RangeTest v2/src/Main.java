@@ -26,17 +26,5 @@ public class Main {
             System.out.println("Iterated: " + j);
         }
 
-
     }
-
-
-
-
-    // I will have an entity which will be an iterable container which I will call Range
-    // I will have an iterator entity which will have the rules to iterate over something iterable aka the Range
-    // The Range will be all Integers (numbers)
-    // someNumber + 1 will be how I pass to the next element in my iterable container
-    // someNumber == lastNumber will be how I know where I ended my iteration
-
-
 }
