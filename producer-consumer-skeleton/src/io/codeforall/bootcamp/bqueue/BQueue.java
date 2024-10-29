@@ -40,7 +40,7 @@ public class BQueue<T> {
             }
             queue.offer(data);
             notifyAll();
-            System.out.println("I've made a new pizza " + data + " there are now " + this.getSize() + " pizzas in the queue.");
+            System.out.println(Thread.currentThread().getName() + " made a new pizza " + data + " there are now " + this.getSize() + " pizzas in the queue.");
         }
     }
 
@@ -60,7 +60,7 @@ public class BQueue<T> {
                 }
             }
             T data = queue.poll();
-            System.out.println("I ate a pizza, there are " + this.getSize() + " pizzas in the queue.");
+            System.out.println(Thread.currentThread().getName() + " ate a pizza, there are " + this.getSize() + " pizzas in the queue.");
             notifyAll();
             return data;
         }
