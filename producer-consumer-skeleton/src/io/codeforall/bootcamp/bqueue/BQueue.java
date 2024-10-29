@@ -12,7 +12,6 @@ public class BQueue<T> {
     private int limit;
     private LinkedList<T> queue;
 
-
     /**
      * Constructs a new queue with a maximum size
      *
@@ -21,8 +20,6 @@ public class BQueue<T> {
     public BQueue(int limit) {
         queue = new LinkedList<T>();
         this.limit = limit;
-
-        //throw new UnsupportedOperationException();
 
     }
 
@@ -40,16 +37,11 @@ public class BQueue<T> {
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-
             }
             queue.offer(data);
             notifyAll();
-
-            System.out.println("PIZZA MADE");
-            System.out.println("Queue has: " + this.getSize() + " pizzas.");
-
+            System.out.println("I've made a new pizza " + data + " there are now " + this.getSize() + " pizzas in the queue.");
         }
-
     }
 
     /**
@@ -68,14 +60,10 @@ public class BQueue<T> {
                 }
             }
             T data = queue.poll();
-            System.out.println("Pizza eaten");
-            System.out.println("Queue has: " + this.getSize() + " pizzas.");
+            System.out.println("I ate a pizza, there are " + this.getSize() + " pizzas in the queue.");
             notifyAll();
             return data;
         }
-
-        //throw new UnsupportedOperationException();
-
     }
 
     /**
@@ -85,9 +73,6 @@ public class BQueue<T> {
      */
     public int getSize() {
         return this.queue.size();
-
-        //throw new UnsupportedOperationException();
-
     }
 
     /**
@@ -97,9 +82,5 @@ public class BQueue<T> {
      */
     public int getLimit() {
         return this.limit;
-
-        //throw new UnsupportedOperationException();
-
     }
-
 }

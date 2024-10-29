@@ -23,14 +23,15 @@ public class Consumer implements Runnable {
 
     @Override
     public void run() {
-
         while (pizzasEaten < elementNum) {
+            try {
+                Thread.sleep((long) (Math.random() * 2500));
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             Pizza pizza = this.queue.poll();
             pizzasEaten++;
-
         }
-        // System.out.println("There aren't any pizzas available at the moment.");
     }
-
 }
 
