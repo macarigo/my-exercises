@@ -20,6 +20,7 @@ public class Arena {
         heroes.add(rogue);
         Warrior warrior = new Warrior();
         heroes.add(warrior);
+        TurnManager turnManager = new TurnManager(this);
     }
 
     public List<Hero> getHeroes() {

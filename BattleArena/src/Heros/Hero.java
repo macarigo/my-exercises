@@ -5,15 +5,17 @@ public class Hero {
     private int attackPower;
     private int defensePower;
     private int mana;
+    private String name;
 
-    public Hero() {
+    public Hero(String name) {
+        this.name = name;
         this.health = 100;
         this.mana = 50;
-        attackPower = 20;
+        attackPower = 30;
         defensePower = 10;
     }
 
-    public int useAttack() {
+    public int useAttack(Hero hero) {
         int damage = attackPower - defensePower; // change defensePower for getTargetDefense
         return damage;
     }
@@ -24,5 +26,29 @@ public class Hero {
         }
         int criticalDamage = (attackPower * 5) - defensePower; // change defensePower for getTargetDefense
         return criticalDamage;
+    }
+    public int getHealth() {
+        return health;
+    }
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public int getDefensePower() {
+        return defensePower;
+    }
+
+    public int getMana() {
+        return mana;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    public void setHealth(int damage) {
+        this.health -= damage;
     }
 }
