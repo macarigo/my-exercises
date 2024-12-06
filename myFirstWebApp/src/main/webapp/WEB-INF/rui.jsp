@@ -14,9 +14,9 @@
 <div class="card text-bg-info mb-3 card text-white" style="max-width: 20rem;">
     <div class="card-header text-center">JAVABANK - Customer # 1</div>
     <div class="card-body">
-        <h5 class="card-title text-center">${user.name}</h5>
-        <p> <i class="fa-solid fa-envelope"></i> ${user.email} </p>
-        <p> <i class="fa-solid fa-phone"></i> ${user.phone} </p>
+        <h5 class="card-title text-center">${name}</h5>
+        <p> <i class="fa-solid fa-envelope"></i> ${email} </p>
+        <p> <i class="fa-solid fa-phone"></i> ${phone} </p>
     </div>
 </div>
 

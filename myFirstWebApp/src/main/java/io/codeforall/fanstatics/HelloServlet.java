@@ -9,14 +9,27 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class HelloServlet extends HttpServlet {
-    Users user = new Users("Rui Ferrão", "rui.ferrao@academiadecodigo.org", "918008555");
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/rui.jsp");
-        req.setAttribute("user",user);
-
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/cheers.jsp");
         dispatcher.forward(req, resp);
 
     }
+
+   @Override
+   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+       String name = req.getParameter("name");
+       String email = req.getParameter("email");
+       String phone = req.getParameter("phone");
+
+       RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/rui.jsp");
+       req.setAttribute("name", name);
+       req.setAttribute("email", email);
+       req.setAttribute("phone", phone);
+
+       dispatcher.forward(req, resp);
+   }
 }
