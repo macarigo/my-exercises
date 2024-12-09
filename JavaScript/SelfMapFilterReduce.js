@@ -21,7 +21,7 @@ function filter (callback) {
 
 }
 
-console.log( filter((char) => char.age > 18) );
+console.log(filter((char) => char.age > 18) );
 console.log(filter((char) => char.name == "Snoop"))
 
 console.log(characters.filter((char) => char.age > 18));
