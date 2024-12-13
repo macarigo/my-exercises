@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    <title>JavaBank</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" modelType="text/css"/>
+    <script modelType="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script modelType="application/javascript" async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+    <div class="container">
+
+        <div th:replace="action :: action"></div>
+    
+        <h2>Customer Management</h2>
+    
+        <div class="row">
+            <div class="col-sm-8">
+                <form class="form-horizontal" th:object="${customer}" th:action="@{'/customer'}" method="post">
+    
+                    <input type="hidden" th:field="*{id}"/>
+    
+                    <div class="form-group" th:classappend="${#fields.hasErrors('firstName')} ? has-error">
+                        <label class="col-sm-2 control-label">First Name:</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" th:field="*{firstName}"/>
+                            <span class="help-block" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name error messages</span>
+                        </div>
+                    </div>
+                    <div class="form-group" th:classappend="${#fields.hasErrors('lastName')} ? has-error">
+                        <label class="col-sm-2 control-label">Last Name:</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" th:field="*{lastName}"/>
+                            <span class="help-block" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name error messages</span>
+                        </div>
+                    </div>
+                    <div class="form-group" th:classappend="${#fields.hasErrors('email')} ? has-error">
+                        <label class="col-sm-2 control-label">Email:</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" th:field="*{email}"/>
+                            <span class="help-block" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error messages</span>
+                        </div>
+                    </div>
+                    <div class="form-group" th:classappend="${#fields.hasErrors('phone')} ? has-error">
+                        <label class="col-sm-2 control-label">Phone:</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" th:field="*{phone}"/>
+                            <span class="help-block" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Phone error messages</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <button type="add" class="btn btn-success" name="action" value="add">Add</button>
+                            <button type="save" class="btn btn-primary" name="action" value="update">Update</button>
+                            <button type="reset" class="btn btn-warning" name="action" value="reset">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<div class="container">
+    <div>
+    <br>
+</div>
+    <h2>Customer List</h2>
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+</div>
+</body>
+<script modelType="application/javascript" src="index.js"></script>
+</html>
